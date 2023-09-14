@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<odoo>
+<!--menu item show-->
+
+    <menuitem id = "optique_menu_root" name  =  "Optique" web_icon  =  "optique,static/description/icon.png">
+        <menuitem id = "optic_configuration_menu" name = "Configuration" sequence = "100">
+            <menuitem id = "optic_details_menu_action" name = "Détails du produit">
+                <menuitem id = "optic_marque_menu_action" name = "Marques" action = "optic_brand_action"/>
+                <menuitem id = "optic_modeles_menu_action" name = "Modèles" action = "optic_modeles_action"/>
+                <menuitem id = "optic_usage_menu_action" name = "Utilisation" action = "optic_usage_action"/>
+                <menuitem id = "optic_caracteristique_menu_action" name = "Autres Caractéristiques" action = "optic_caracteristique_action"/>
+            </menuitem>
+            <menuitem id = "optic_lentilles_de_contact" name = "Lentilles de contact">
+                <menuitem id = "optic_wear_time" name = "Durée de port" action = "optic_wear_time_action"/>
+                <menuitem id = "optic_packaging" name = "Packaging" action = "optic_packaging_action"/>
+                <menuitem id = "optic_type_produit_entretien" name = "Types de produits d'entretien" action = "optic_product_type_maintains_action"/>
+            </menuitem>
+            <menuitem id = "optic_montures_menu" name = "Montures">
+                <menuitem id = "optic_couleur_lentilles_monture" name = "Couleurs de lentilles monture" action = "optic_couleur_lentilles_monture_action"/>
+            </menuitem>
+        </menuitem>
+        <menuitem id = "donee_de_base_menu" name = "Données de base">
+            <menuitem id = "article_sub_menu" name = "Articles" action = "article_action"/>
+            <menuitem id = "variante_article_sub_menu" name = "Variantes d'articles" action = "article_variante_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

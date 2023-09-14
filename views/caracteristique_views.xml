@@ -1,0 +1,18 @@
+<?xml version = "1.0"?>
+<odoo>   
+    <record id = "optic_caracteristique_view_tree" model = "ir.ui.view">
+        <field name = "name">optic.caracteristique.tree</field>
+        <field name = "model">optic.caracteristique</field>
+        <field name = "arch" type = "xml">
+            <tree>
+                <field name = "name" required = "True"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id = "optic_caracteristique_action" model = "ir.actions.act_window">
+        <field name = "name">Caractéristiques</field>
+        <field name = "res_model">optic.caracteristique</field>
+        <field name = "view_mode">tree,form,kanban</field>
+    </record>
+</odoo>

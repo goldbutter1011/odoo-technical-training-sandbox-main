@@ -1,0 +1,18 @@
+<?xml version = "1.0"?>
+<odoo>   
+    <record id = "optic_wear_time_view_tree" model = "ir.ui.view">
+        <field name = "name">optic.duration.tree</field>
+        <field name = "model">optic.duration</field>
+        <field name = "arch" type = "xml">
+            <tree>
+                <field name = "name" required = "True"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id = "optic_wear_time_action" model = "ir.actions.act_window">
+        <field name = "name">Durée de port</field>
+        <field name = "res_model">optic.duration</field>
+        <field name = "view_mode">tree,form,kanban</field>
+    </record>
+</odoo>

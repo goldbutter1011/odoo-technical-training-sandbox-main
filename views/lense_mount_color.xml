@@ -1,0 +1,17 @@
+<?xml version = "1.0"?>
+<odoo>   
+    <record id = "optic_couleur_lentilles_monture_view_tree" model = "ir.ui.view">
+        <field name = "name">optic.couleur.lentilles.monture.tree</field>
+        <field name = "model">optic.couleur.lentilles.monture</field>
+        <field name = "arch" type = "xml">
+            <tree>
+                <field name = "name" required="True"/>
+            </tree>
+        </field>
+    </record>
+    <record id = "optic_couleur_lentilles_monture_action" model = "ir.actions.act_window">
+        <field name = "name">Couleurs De Lentilles Monture</field>
+        <field name = "res_model">optic.couleur.lentilles.monture</field>
+        <field name = "view_mode">tree,form,kanban</field>
+    </record>
+</odoo>

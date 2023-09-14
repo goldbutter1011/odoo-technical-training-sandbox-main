@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_optic_caracteristique,access.optic.caracteristique,model_optic_caracteristique,,1,1,1,1
+access_optic_couleur_lentilles_monture,access.optic.couleur_lentilles_monture,model_optic_couleur_lentilles_monture,,1,1,1,1
+access_optic_duration,access.optic.duration,model_optic_duration,,1,1,1,1
+access_optic_brand,access.optic.brand,model_optic_brand,,1,1,1,1
+access_optic_modele,access.optic.modele,model_optic_modele,,1,1,1,1
+access_optic_packaging,access.optic.packaging,model_optic_packaging,,1,1,1,1
+access_optic_product_type_maintains,access.optic.product.type.maintains,model_optic_product_type_maintains,,1,1,1,1
+access_optic_usage,access.optic.usage,model_optic_usage,,1,1,1,1

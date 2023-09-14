@@ -1,0 +1,22 @@
+<?xml version = "1.0"?>
+<odoo>
+
+    <record id = "optic_modele_view_tree" model = "ir.ui.view">
+        <field name = "name">optic.modele.tree</field>
+        <field name = "model">optic.modele</field>
+        <field name = "arch" type = "xml">
+            <tree>
+                <field name = "name"/>
+                <field name = "marque_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id = "optic_modeles_action" model = "ir.actions.act_window">
+        <field name = "name">Modèles</field>
+        <field name = "res_model">optic.modele</field>
+        <field name = "view_mode">tree,form,kanban</field>
+    </record>
+
+</odoo>

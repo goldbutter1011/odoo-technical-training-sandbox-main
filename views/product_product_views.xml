@@ -1,0 +1,80 @@
+<?xml version = "1.0"?>
+
+<odoo>
+<!--form view-->
+    <record id = "optic_product_product_form" model = "ir.ui.view">
+        <field name = "name">product.product.form.inherited</field>
+        <field name = "model">product.product</field>
+        <field name = "inherit_id" ref = "product.product_normal_form_view"/>
+        <field name = "arch" type = "xml">
+                <xpath expr = "//form" position = "attributes">
+                    <attribute name = "create">false</attribute>
+                </xpath>
+                <xpath expr = "//page[@name = 'general_information']/group/group[@name = 'group_general']/field[@name = 'type']" position = "after">
+                        <field name = "nature_article" position="move" required = "True"/>
+                        <field name = "type_verre" widget = "radio" attrs = "{'invisible':[('nature_article','!=','verre')]}" />
+                </xpath>
+                <notebook position = "inside">
+                    <page string = "Détails du produit">
+                        <group>
+                            <group string  =  "Marques et modèles" editable="True">
+                                <field name  =  "brand_id" string = "Marque"/>
+                                <field name  =  "model_id" string = "Modèle" context = "{'default_marque_id' : brand_id}"/>
+                                <field name  =  "collection"/>
+                                <field name  =  "ref_catalogue"/>
+                                <field name  =  "usage_ids" widget = "many2many_tags"/>
+                                <field name  =  "caracteristics_id" widget = "many2many_tags"/>
+                                <field name  =  "lense_color" attrs = "{'invisible':[('nature_article','!=','monture')]}"/>
+                            </group>
+                            <group string  =  "Dates d'utilisation" attrs = "{'invisible':['|',('nature_article','=','verre'),('nature_article','=','monture')]}">
+                                <field name = "date_experation" string = "Date d'expiration"/>
+                                <field name = "optimal_use_date" string = "Date d'utilisation optimale"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string = "Lentille de contact" attrs = "{'invisible':[('nature_article','!=','lentilles')]}">
+                        <group>
+                            <field name = "uv_treatment" widget = "upgrade_boolean" />
+                            <field name = "wear_time_id"/>
+                            <field name = "packaging"/>
+                            <field name = "product_type_maintain_ids" widget = "many2many_tags"/>
+                        </group>
+                    </page>
+                </notebook>
+        </field>
+    </record>
+<!--kanban view-->
+    <record id = "optic_product_product_kanban" model = "ir.ui.view">
+        <field name = "name">product.product.kanban.inherited</field>
+        <field name = "model">product.product</field>
+        <field name = "inherit_id" ref = "product.product_kanban_view"/>
+        <field name = "arch" type = "xml">
+            <xpath expr = "//kanban" position = "attributes">
+                <attribute name = "default_group_by">nature_article</attribute>
+                <attribute name = "records_draggable">0</attribute>
+                <attribute name = "create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+<!--tree view-->
+    <record id = "optic_product_product_tree" model = "ir.ui.view">
+        <field name = "name">product_product_tree_view</field>
+        <field name = "model">product.product</field>
+        <field name = "inherit_id" ref = "product.product_product_tree_view"/>
+        <field name = "arch" type = "xml">
+            <xpath expr = "//tree" position = "inside">
+                <field name = "nature_article"/>
+            </xpath>
+            <xpath expr = "//tree" position = "attributes">
+                <attribute name = "create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+<!--action menu-->
+    <record id = "article_variante_action" model = "ir.actions.act_window">
+        <field name = "name">Variantes d'articles</field>
+        <field name = "res_model">product.product</field>
+        <field name = "view_mode">kanban,tree,form</field>
+    </record>
+</odoo>
